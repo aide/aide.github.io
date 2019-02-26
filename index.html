@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AIDE - Advanced Intrusion Detection Environment</title>
+    </head>
+    <body>
+        <h1>AIDE</h1>
+        <h2>About AIDE</h2>
+        <div>AIDE (Advanced Intrusion Detection Environment, [eyd]) is a file and directory integrity checker.</div>
+        <h2>What does it do?</h2>
+        <div>
+            It creates a database from the regular expression rules that it finds from the config file(s). Once this database is initialized it can be used to verify the integrity of the files. It has several message digest algorithms (see below) that are used to check the integrity of the file. All of the usual file attributes can also be checked for inconsistencies. It can read databases from older or newer versions. See the manual pages within the distribution for further info.
+        </div>
+        <h2>Features</h2>
+        <div>
+            <ul>
+                <li>supported message digest algorithms: md5, sha1, rmd160, tiger, crc32, sha256, sha512, whirlpool (additionally with libmhash: gost, haval, crc32b)</li>
+                <li>supported file attributes: File type, Permissions, Inode, Uid, Gid, Link name, Size, Block count, Number of links, Mtime, Ctime and Atime</li>
+                <li>support for Posix ACL, SELinux, XAttrs and Extended file system attributes if support is compiled in</li>
+                <li>plain text configuration files and database for simplicity</li>
+                <li>powerful regular expression support to selectively include or exclude files and directories to be monitored</li>
+                <li>gzip database compression if zlib support is compiled in</li>
+                <li>stand alone static binary for easy client/server monitoring configurations</li>
+                <li>and many more</li>
+            </ul>
+        </div>
+        <h2>Get AIDE</h2>
+        <div>
+            The current <em>stable</em> version of AIDE is <strong>0.16.1</strong>
+            <table>
+                <tr>
+                    <td><strong>stable</strong> release</td>
+                    <td><a href="https://github.com/aide/aide/releases/download/v0.16.1/aide-0.16.1.tar.gz">aide-0.16.1.tar.gz</a></td>
+                </tr>
+                <tr>
+                    <td>GPG signature</td>
+                    <td><a href="https://github.com/aide/aide/releases/download/v0.16.1/aide-0.16.1.tar.gz.asc">aide-0.16.1.tar.gz.asc</a></td>
+                </tr>
+                <tr>
+                    <td>release date</td>
+                    <td>25 Feb 2019</td>
+                </tr>
+            </table>
+        </div>
+        <h3>Downstreams</h3>
+        <div>
+            AIDE is included in the following distributions. Please use the corresponding command to install AIDE.
+            <ul>
+                <li><a href="https://tracker.debian.org/pkg/aide">Debian GNU/Linux</a> | <a href="https://launchpad.net/ubuntu/+source/aide">Ubuntu</a>: <code>apt install aide</code></li>
+                <li><a href="http://packages.gentoo.org/package/app-forensics/aide">Gentoo</a>: <code>emerge aide</code></li>
+                <li><a href="http://trac.macports.org/browser/trunk/dports/security/aide/Portfile">MacPorts</a>: <code>port install aide</code></li>
+                <li><a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/security/aide/">FreeBSD</a>: <code>pkg_add -r aide</code></li>
+                <li>Red Hat | CentOS | Fedora: <code>yum install aide</code></li>
+                <li>openSUSE: <code>zypper install aide</code></li>
+                <li><a href="http://www.ipadd.de/binary-v2.html#ids">IPCop</a>: see <a href="http://www.ipadd.de/binary-v2.html#guide">here</a> for installation guidelines</li>
+            </ul>
+            <small>See also the output of <code>whohas aide</code>.</small>
+            <p>Basically AIDE runs on any modern Unix.</p>
+            <p>Please report to the <a href="https://github.com/aide/aide.github.io/issues">aide.github.io issue tracker</a> if your distribution is not listed above.</p>
+        </div>
+        <h3>Source</h3>
+        <div>
+            Both the source tarballs on GitHub and the tags of the git repository (since v0.16a1) are GnuPG-signed.<br />
+            Since v0.16a2 the key used for signing is the GnuPG key of <i>Hannes von Haugwitz</i> (the current maintainer of AIDE).<br />
+            The current public key can be downloaded from one of the well known PGP key servers.<br />
+            <p><a name="gpgkey">The current key is:</a></p>
+<pre>pub   4096R/68E7B931 2011-06-28 [expires: 2021-06-27]
+      Key fingerprint = 2BBB D30F AAB2 9B32 53BC  FBA6 F694 7DAB 68E7 B931
+uid                  Hannes von Haugwitz &lt;hannes@vonhaugwitz.com&gt;
+</pre>
+            Please <strong>always</strong> verify the signature of a release before using it (see below).<br />
+        </div>
+        <h4>Source tarballs</h4>
+        <div>
+            The source code of the latest stable release can be downloaded <a href="https://github.com/aide/aide/releases">here</a>.<br />
+            Use the following command to verify the signature of the downloaded source tarball (see <a href="https://github.com/aide/aide/blob/master/README">README</a> file for details):<br />
+            <code>gpg --verify aide-&lt;VERSION_NUMBER&gt;.tar.gz.asc</code>
+        </div>
+        <h4>GIT</h4>
+        <div>
+            The AIDE git repository can be found <a href="https://github.com/aide/aide">here</a>.<br />
+            Use the following command to verify the signature of a git tag (see <a href="https://github.com/aide/aide/blob/master/README">README</a> file for details):<br />
+            <code>git verify-tag v&lt;VERSION_NUMBER&gt;</code>
+        </div>
+        <h2>License</h2>
+        <div>AIDE is licensed under GPL-2.0.</div>
+        <h2 id="support">Get Help</h2>
+        <h3>Mailing list</h3>
+            <div>
+                For questions about the usage of AIDE and announcements of
+                final releases or other project news there is the
+                AIDE <a href="https://www.ipi.fi/mailman/listinfo/aide">mailing list</a>
+                on ipi.fi (Thanks to <em>Rami Lehti</em> for maintaining it).
+            </div>
+        <h3>IRC</h3>
+        <div>
+            There is a discussion channel <em>#aide</em> on <a href="http://oftc.net/">irc.oftc.net</a>
+            for questions about the usage and discussions about the development of AIDE.
+        </div>
+        <h3>Issues, Feature requests and pull requests</h3>
+        <div>
+            <p>Submit an <a href="https://github.com/aide/aide/issues">issue</a> on GitHub</p>
+        </div>
+        </div>
+        <h2>Who's behind AIDE?</h2>
+        <div>
+            AIDE was originally written by <strong>Rami Lehti</strong> and <strong>Pablo Virolainen</strong> in 1999.<br />
+            Between 2003 and 2010 it was maintained by <strong>Richard van den Berg</strong>.<br />
+            In October 2010 <strong>Hannes von Haugwitz</strong> took over the project.<br />
+            For the mail addresses of the authors please see the <a href="https://github.com/aide/aide/blob/master/AUTHORS">AUTHORS</a> file.
+        </div>
+        <p>
+        Last Update: 26 Feb 2019<br />
+        </p>
+    </body>
+</html>
